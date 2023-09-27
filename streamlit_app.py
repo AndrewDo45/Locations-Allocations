@@ -8,7 +8,7 @@ st.markdown("Here we can see the dataframe created during this weeks project.")
 
 # Read dataframe
 dataframe = pd.read_csv(
-    "WK1_Airbnb_Amsterdam_listings_proj_solution.csv",
+    "WK1_Airbnb_Jerusalem_listings_proj_solution.csv",
     names=[
         "Airbnb Listing ID",
         "Price",
@@ -21,12 +21,12 @@ dataframe = pd.read_csv(
 
 # We have a limited budget, therefore we would like to exclude
 # listings with a price above 100 pounds per night
-dataframe = dataframe[dataframe["Price"] <= 100]
+dataframe = dataframe[dataframe["Price"] <= 600]
 
 # Display as integer
 dataframe["Airbnb Listing ID"] = dataframe["Airbnb Listing ID"].astype(int)
 # Round of values
-dataframe["Price"] = "£ " + dataframe["Price"].round(2).astype(str) # <--- CHANGE THIS POUND SYMBOL IF YOU CHOSE CURRENCY OTHER THAN POUND
+dataframe["Price"] = "₪ " + dataframe["Price"].round(2).astype(str) # <--- CHANGE THIS POUND SYMBOL IF YOU CHOSE CURRENCY OTHER THAN POUND
 # Rename the number to a string
 dataframe["Location"] = dataframe["Location"].replace(
     {1.0: "To visit", 0.0: "Airbnb listing"}
